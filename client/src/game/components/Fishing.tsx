@@ -7,7 +7,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import { useAppDispatch, useAppSelector } from '../hooks'
 import { setOpen } from '../stores/FishingStore'
 
-import { useContractWrite,  } from 'wagmi'
+import { useContractWrite, usePrepareContractWrite  } from 'wagmi'
 
 import { Button, Modal,Carousel } from 'antd';
 // import ABI from '../../abi/mint.json'
@@ -32,13 +32,12 @@ export default function CreatFishNFT() {
   const isOpen = useAppSelector((state) => state.fishing.open)
 
  
-
-  const { write,isLoading,data,isSuccess } = useContractWrite({
+  const { config } = usePrepareContractWrite({
     addressOrName: '0x6a7a605e8ae80266bafaf349cc8f95d9f3c651a3',
     contractInterface: ABI,
     functionName: 'mint',
-    // writeAsync:false
   })
+  const { write, isLoading, data, isSuccess } = useContractWrite(config)
 
   useEffect(()=>{
     if (isSuccess){
