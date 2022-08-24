@@ -34,7 +34,7 @@ export default function CreatFishNFT() {
  
 
   const { write,isLoading,data,isSuccess } = useContractWrite({
-    addressOrName: '0x2c8E93e086caD5a08cfF9c0a05B0190e2448F454',
+    addressOrName: '0x6a7a605e8ae80266bafaf349cc8f95d9f3c651a3',
     contractInterface: ABI,
     functionName: 'mint',
     // writeAsync:false
@@ -42,7 +42,7 @@ export default function CreatFishNFT() {
 
   useEffect(()=>{
     if (isSuccess){
-    // dispatch(setOpen(false));
+    dispatch(setOpen(false));
 
     }
 
