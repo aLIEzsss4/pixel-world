@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export const NFTBalance = createSlice({
-  name: 'NFTBalance',
+  name: 'nftBalance',
   initialState: {
     open: false,
   },

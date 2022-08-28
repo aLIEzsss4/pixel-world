@@ -4,6 +4,7 @@ import { useAppSelector } from './hooks'
 
 import LoginDialog from './components/LoginDialog'
 import FishingCom from './components/Fishing'
+import NFTsCom from './components/Balance'
 import Chat from './components/Chat'
 
 // import Debug from './components/Debug'
@@ -24,6 +25,7 @@ function App() {
 
         {/* Render the ComputerDialog if user is using a computer. */}
       {<FishingCom/>}
+      {<NFTsCom />}
 
         {/* Render the VideoConnectionDialog if user is not connected to a webcam. */}
         {/* {!computerDialogOpen && !videoConnected && loggedIn && <VideoConnectionDialog />} */}

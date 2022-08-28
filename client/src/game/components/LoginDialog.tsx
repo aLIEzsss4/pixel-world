@@ -137,11 +137,16 @@ export default function LoginDialog() {
           }}>
             <ConnectButton />
           </div>
+          <a href="https://mumbaifaucet.com/" target="_blank" style={{
+            display: 'flex',
+            justifyContent: 'center',
+            padding: 12,
+          }}>GET MATIC</a>
         </Left>
       </Content>
       <Bottom>
         <Button variant="contained" color="secondary" size="large" type="submit">
-          Join
+          Play
         </Button>
       </Bottom>
     </Wrapper>

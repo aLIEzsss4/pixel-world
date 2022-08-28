@@ -5,6 +5,7 @@ import userReducer from './UserStore'
 import chatReducer from './ChatStore'
 
 import fishingReducer from './FishingStore';
+import nftReducer from './NFTBalanceStore';
 
 enableMapSet()
 
@@ -13,6 +14,7 @@ const store = configureStore({
     user: userReducer,
     chat: chatReducer,
     fishing: fishingReducer,
+    nftBalance: nftReducer
     // ...globalStore
     // nftMarket: nftMarkReducer,
     // creatNft: creatNftReducer

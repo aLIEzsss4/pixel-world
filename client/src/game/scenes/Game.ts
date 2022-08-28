@@ -16,7 +16,7 @@ import { PlayerBehavior } from '../types/PlayerBehavior'
 import store from '../stores'
 import { setConnected } from '../stores/UserStore'
 import { setFocused, setShowChat } from '../stores/ChatStore'
-import { setOpen as setBarOpen } from '../../stores/NFTBalanceStore';
+import { setOpen as setBarOpen } from '../stores/NFTBalanceStore';
 // import { setOpen as setMintOpen } from '../../stores/MintStore';
 import { setOpen as setMintOpen } from '../stores/FishingStore';
 // import { mintCom } from 'stores/index'
@@ -41,7 +41,7 @@ export default class Game extends Phaser.Scene {
   private otherPlayers!: Phaser.Physics.Arcade.Group
   private otherPlayerMap = new Map<string, OtherPlayer>()
   computerMap = new Map<string, Item>()
-  fishing: any
+  moving: boolean
 
   constructor() {
     super('game')
@@ -200,25 +200,25 @@ export default class Game extends Phaser.Scene {
     this.network.onChatMessageAdded(this.handleChatMessageAdded, this)
   }
 
-  getFishing(){
-    console.log(this.fishing)
-    return this.fishing
+  getMoving(){
+    console.log(this.moving)
+    return this.moving
   }
 
-  setFishing(flag){
+  setMoving(flag){
     console.log(flag,'flag')
-    this.fishing = flag
+    this.moving = flag
   }
 
   private hitBomb(player, selectionItem) { // fishing
  
-    if (this.getFishing()){
+    if (this.getMoving()){
       return 
-    }{
-    
-      // this.setFishing(true)
-      store.dispatch(setMintOpen(true))
     }
+    
+      // this.setMoving(true)
+      store.dispatch(setMintOpen(true))
+    
     player?.anims?.stop()
 
     console.log('log', this, player, selectionItem)
@@ -227,14 +227,18 @@ export default class Game extends Phaser.Scene {
 
   private hitBar(player, selectionItem) { // bar
 
-    if (this.getFishing()) {
+    if (this.getMoving()) {
       return
-    } {
+    } 
 
-      // this.setFishing(true)
+      console.log('open bar')
+      // this.disableKeys()
+      // this.setMoving(true)
+      // this.setMoving(true)
       store.dispatch(setBarOpen(true))
-    }
+    
     player?.anims?.stop()
+
 
     console.log('log', this, player, selectionItem)
 

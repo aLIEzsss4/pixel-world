@@ -1,16 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-// import Button from '@mui/material/Button'
-import IconButton from '@mui/material/IconButton'
-import CloseIcon from '@mui/icons-material/Close'
-
 import { useAppDispatch, useAppSelector } from '../hooks'
 import { setOpen } from '../stores/FishingStore'
 
 import { useContractWrite,  } from 'wagmi'
+import phaserGame from '../PhaserGame'
+import Game from '../scenes/Game'
 
-import { Button, Modal,Carousel } from 'antd';
-// import ABI from '../../abi/mint.json'
+
+import {  Modal,Carousel } from 'antd';
 import { useEffect } from 'react';
 
 const ABI = [{
@@ -30,6 +26,7 @@ const ABI = [{
 export default function CreatFishNFT() {
   const dispatch = useAppDispatch()
   const isOpen = useAppSelector((state) => state.fishing.open)
+  const game = phaserGame.scene.keys.game as Game
 
  
 
@@ -48,6 +45,20 @@ export default function CreatFishNFT() {
 
   }, [isSuccess])
 
+
+  // useEffect(()=>{
+  //   if(!game) return
+  //   if(isOpen){
+  //     game.disableKeys()
+  //   }else{
+  //     game.enableKeys()
+  //     game.setMoving(false)
+  //   }
+
+  // }, [isOpen, game])
+
+  
+
   const showModal = () => {
     dispatch(setOpen(true));
   };
@@ -61,6 +72,7 @@ export default function CreatFishNFT() {
   const handleCancel = () => {
     // setIsModalVisible(false);
     dispatch(setOpen(false));
+    // game.enableKeys()
 
   };
 
