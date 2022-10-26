@@ -24,25 +24,25 @@ export default class Preloader extends Phaser.Scene {
 
 
 
-    this.load.spritesheet('chairs', 'assets/items/chair.png', {
-      frameWidth: 32,
-      frameHeight: 64,
-    })
+    // this.load.spritesheet('chairs', 'assets/items/chair.png', {
+    //   frameWidth: 32,
+    //   frameHeight: 64,
+    // })
 
-    this.load.spritesheet('computers', 'assets/items/computer.png', {
-      frameWidth: 96,
-      frameHeight: 64,
-    })
+    // this.load.spritesheet('computers', 'assets/items/computer.png', {
+    //   frameWidth: 96,
+    //   frameHeight: 64,
+    // })
 
-    this.load.spritesheet('office', 'assets/items/Modern_Office_Black_Shadow.png', {
-      frameWidth: 32,
-      frameHeight: 32,
-    })
+    // this.load.spritesheet('office', 'assets/items/Modern_Office_Black_Shadow.png', {
+    //   frameWidth: 32,
+    //   frameHeight: 32,
+    // })
 
-    this.load.spritesheet('generic', 'assets/items/Generic.png', {
-      frameWidth: 32,
-      frameHeight: 32,
-    })
+    // this.load.spritesheet('generic', 'assets/items/Generic.png', {
+    //   frameWidth: 32,
+    //   frameHeight: 32,
+    // })
 
     this.load.spritesheet('adam', 'assets/character/adam.png', {
       frameWidth: 32,
